@@ -1,0 +1,10 @@
+.idea
+.settings
+.project
+*.iml
+npm-debug.log
+node_modules
+build
+coverage
+errorShots
+phantomjsdriver.log
