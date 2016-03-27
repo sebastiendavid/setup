@@ -4,12 +4,14 @@
   "description": "setup experiment",
   "main": "src/index.js",
   "scripts": {
-    "build": "NODE_ENV=\"production\" node_modules/.bin/webpack --progress -p",
-    "e2e": "node_modules/.bin/wdio",
-    "lint": "node_modules/.bin/eslint ./",
-    "prod": "NODE_ENV=\"production\" node_modules/.bin/webpack-dev-server --progress --colors -p",
-    "start": "node_modules/.bin/webpack-dev-server --inline --hot --progress --colors -d",
-    "test": "NODE_PATH=\"$PWD\" node_modules/.bin/mocha --compilers js:babel-register './test/unit/**/*.js'"
+    "build": "NODE_ENV=\"production\" `npm bin`/webpack --progress -p",
+    "clean": "`npm bin`/trash '*.log' errorShots coverage",
+    "cov": "NODE_PATH=\"$PWD\" `npm bin`/isparta cover `npm bin`/_mocha -- --opts .mocha",
+    "lint": "`npm bin`/eslint ./",
+    "prod": "NODE_ENV=\"production\" `npm bin`/webpack-dev-server --progress --colors -p",
+    "start": "`npm bin`/webpack-dev-server --inline --hot --progress --colors -d",
+    "test": "NODE_PATH=\"$PWD\" `npm bin`/mocha --opts .mocha",
+    "test:e2e": "`npm bin`/wdio"
   },
   "author": "Sébastien David",
   "license": "ISC",
@@ -48,6 +50,7 @@
     "selenium-standalone": "^5.1.0",
     "sinon": "^1.17.3",
     "style-loader": "^0.13.1",
+    "trash-cli": "^1.2.1",
     "wdio-dot-reporter": "0.0.5",
     "wdio-mocha-framework": "^0.2.12",
     "webdriverio": "^4.0.5",

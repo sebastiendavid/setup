@@ -1,0 +1,11 @@
+instrumentation:
+  root: ./src
+  extensions:
+    - .js
+  excludes: ["node_modules", "build", "**/*.spec.js"]
+  include-all-sources: true
+reporting:
+  dir: ./coverage
+  reports:
+    - lcov
+    - text
