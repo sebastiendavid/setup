@@ -1,4 +1,5 @@
 import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import nodeExternals from 'webpack-node-externals';
@@ -41,6 +42,7 @@ export default {
     react: 'React',
     'react-dom': 'ReactDOM',
     'react-redux': 'ReactRedux',
+    'react-router': 'ReactRouter',
     redux: 'Redux',
     'redux-thunk': 'ReduxThunk'
   }, prod ? nodeExternals() : null].filter((ext) => !!ext),
@@ -59,7 +61,10 @@ export default {
       }
     ]
   },
-  postcss: () => [autoprefixer({ browsers: ['last 2 versions'] })],
+  postcss: () => [
+    autoprefixer({ browsers: ['last 2 versions'] }),
+    prod ? cssnano() : null
+  ].filter((plugin) => !!plugin),
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': `"${env}"`
@@ -69,7 +74,7 @@ export default {
       inject: true,
       template: 'src/index.html',
       filename: 'index.html',
-      title: 'React experiment',
+      title: 'Setup',
       favicon: 'src/assets/favicon.ico',
       hash: prod,
       chunksSortMode: 'none',
@@ -80,7 +85,8 @@ export default {
           `${cdnjs}/react/${versions['react-dom']}/react-dom${min}.js`,
           `${cdnjs}/redux/${versions.redux}/redux${min}.js`,
           `${cdnjs}/react-redux/${versions['react-redux']}/react-redux${min}.js`,
-          `${cdnjs}/redux-thunk/${versions['redux-thunk']}/redux-thunk${min}.js`
+          `${cdnjs}/redux-thunk/${versions['redux-thunk']}/redux-thunk${min}.js`,
+          `${cdnjs}/react-router/${versions['react-router']}/ReactRouter${min}.js`
         ].map((url) => `<script src="${url}"></script>`).join('\n  '),
         css: [
           `${cdnjs}/normalize/${versions['normalize.css']}/normalize${min}.css`
@@ -107,5 +113,8 @@ export default {
         removeEmptyElements: false
       } : false
     })
-  ].filter((plugin) => !!plugin)
+  ].filter((plugin) => !!plugin),
+  devServer: {
+    historyApiFallback: true
+  }
 };

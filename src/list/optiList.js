@@ -1,4 +1,3 @@
-import './list.scss';
 import { connect } from 'react-redux';
 import OptiListItem from 'src/list/optiListItem';
 import React, { Component, PropTypes } from 'react';

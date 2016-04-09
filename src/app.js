@@ -1,38 +1,23 @@
 import './app.scss';
-import { connect } from 'react-redux';
-import OptiList from 'src/list/optiList';
-import React, { Component, PropTypes } from 'react';
-import YoloList from 'src/list/yoloList';
+import { browserHistory, IndexRedirect, Route, Router } from 'react-router';
+import Lists from 'src/list';
+import React, { PropTypes } from 'react';
 
-export default connect()(class App extends Component {
-  static propTypes = {
-    dispatch: PropTypes.func.isRequired
-  };
+function Root({ children }) {
+  return <main className="App">{children}</main>;
+}
 
-  constructor() {
-    super();
-    this.fillLists = this.fillLists.bind(this);
-  }
+Root.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.array, PropTypes.string]).isRequired
+};
 
-  componentDidMount() {
-    this.props.dispatch({ type: 'LIST_INIT' });
-  }
-
-  fillLists() {
-    this.props.dispatch({ type: 'LIST_FILL' });
-  }
-
-  render() {
-    return (
-      <main className="App">
-        <header className="App__header">
-          <button onClick={this.fillLists}>Fill lists</button>
-        </header>
-        <section className="App__lists">
-          <YoloList />
-          <OptiList />
-        </section>
-      </main>
-    );
-  }
-});
+export default function App() {
+  return (
+    <Router history={browserHistory}>
+      <Route path="/" component={Root}>
+        <IndexRedirect to="lists" />
+        <Route path="lists" component={Lists} />
+      </Route>
+    </Router>
+  );
+}

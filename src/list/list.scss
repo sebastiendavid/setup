@@ -1,3 +1,11 @@
+.Lists {
+  display: flex;
+}
+
+.Lists__header {
+  padding: 1rem;
+}
+
 .List {
   flex-grow: 1;
 }

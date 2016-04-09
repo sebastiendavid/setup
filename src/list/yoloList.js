@@ -1,4 +1,3 @@
-import './list.scss';
 import { connect } from 'react-redux';
 import moment from 'moment';
 import React, { Component, PropTypes } from 'react';
