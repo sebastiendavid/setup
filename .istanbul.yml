@@ -2,7 +2,7 @@ instrumentation:
   root: ./src
   extensions:
     - .js
-  excludes: ["node_modules", "build", "**/*.spec.js"]
+  excludes: ["node_modules", "build", "**/*.spec.js", "**/*.scenario.js"]
   include-all-sources: true
 reporting:
   dir: ./coverage
