@@ -15,7 +15,7 @@ export default function configureStore(initialState = {}) {
   );
   if (hasDevTools && module.hot) {
     module.hot.accept('src/store/reducers', () =>
-      store.replaceReducer(require('src/store/reducers'))
+      store.replaceReducer(reducers)
     );
   }
   return store;
