@@ -6,8 +6,4 @@ import React from 'react';
 
 const store = configureStore();
 
-render((
-  <Provider store={store}>
-    <App />
-  </Provider>
-), document.getElementById('main'));
+render(<Provider store={store}><App /></Provider>, document.getElementById('main'));
