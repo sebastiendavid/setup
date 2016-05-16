@@ -11,6 +11,9 @@ describe(__filename, () => {
       },
       'src/list': {
         '@noCallThru': true
+      },
+      'src/bigData': {
+        '@noCallThru': true
       }
     });
   });

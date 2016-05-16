@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import bigData from 'src/bigData/bigDataReducer';
 import list from 'src/list/listReducer';
 
 export function createReducer(initialState, reducerMap) {
@@ -9,5 +10,6 @@ export function createReducer(initialState, reducerMap) {
 }
 
 export default combineReducers({
+  bigData,
   list
 });
