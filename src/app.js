@@ -3,6 +3,7 @@ import { browserHistory, IndexRedirect, Route, Router } from 'react-router';
 import BigData from 'src/bigData';
 import Lists from 'src/list';
 import React, { PropTypes } from 'react';
+import ShouldUpdate from 'src/shouldUpdate';
 
 function Root({ children }) {
   return <main className="App">{children}</main>;
@@ -19,6 +20,7 @@ export default function App() {
         <IndexRedirect to="lists" />
         <Route path="lists" component={Lists} />
         <Route path="bigdata" component={BigData} />
+        <Route path="shouldupdate" component={ShouldUpdate} />
       </Route>
     </Router>
   );

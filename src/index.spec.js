@@ -1,8 +1,9 @@
 import { expect } from 'chai';
+import path from 'path';
 import proxyquire from 'proxyquire';
 import sinon from 'sinon';
 
-describe(__filename, () => {
+describe(path.relative(process.cwd(), __filename), () => {
   let ReactDOM;
 
   before(() => {

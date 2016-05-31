@@ -10,7 +10,7 @@ export default function configureStore(initialState = {}) {
     initialState,
     compose(
       applyMiddleware(thunk),
-      hasDevTools ? window.devToolsExtension(() => store) : f => f
+      hasDevTools ? window.devToolsExtension() : f => f
     )
   );
   if (hasDevTools && module.hot) {
