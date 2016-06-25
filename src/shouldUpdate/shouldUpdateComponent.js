@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 
 export default class ShouldUpdateComponent extends Component {
   static propTypes = {
-    data: PropTypes.object.isRequired
+    data: PropTypes.object.isRequired,
   };
 
   shouldComponentUpdate(nextProps) {

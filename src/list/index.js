@@ -6,7 +6,7 @@ import YoloList from 'src/list/yoloList';
 
 export default connect()(class Lists extends Component {
   static propTypes = {
-    dispatch: PropTypes.func.isRequired
+    dispatch: PropTypes.func.isRequired,
   };
 
   constructor() {

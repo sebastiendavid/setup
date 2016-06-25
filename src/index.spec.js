@@ -8,27 +8,27 @@ describe(path.relative(process.cwd(), __filename), () => {
 
   before(() => {
     global.document = {
-      getElementById: sinon.spy()
+      getElementById: sinon.spy(),
     };
     ReactDOM = {
       '@noCallThru': true,
-      render: sinon.spy()
+      render: sinon.spy(),
     };
     proxyquire('src/index', {
       'src/app': {
-        '@noCallThru': true
+        '@noCallThru': true,
       },
       'src/store/configureStore': Object.assign(sinon.spy(), {
-        '@noCallThru': true
+        '@noCallThru': true,
       }),
       react: {
         '@noCallThru': true,
-        createElement: sinon.spy()
+        createElement: sinon.spy(),
       },
       'react-redux': {
-        '@noCallThru': true
+        '@noCallThru': true,
       },
-      'react-dom': ReactDOM
+      'react-dom': ReactDOM,
     });
   });
 

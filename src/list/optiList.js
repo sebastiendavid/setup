@@ -3,11 +3,11 @@ import OptiListItem from 'src/list/optiListItem';
 import React, { Component, PropTypes } from 'react';
 
 export default connect((state) => ({
-  list: state.list
+  list: state.list,
 }))(class OptiList extends Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
-    list: PropTypes.array.isRequired
+    list: PropTypes.array.isRequired,
   };
 
   constructor() {

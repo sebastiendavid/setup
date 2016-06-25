@@ -11,5 +11,5 @@ export function createReducer(initialState, reducerMap) {
 
 export default combineReducers({
   bigData,
-  list
+  list,
 });

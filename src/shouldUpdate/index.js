@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ShouldUpdateComponent from 'src/shouldUpdate/ShouldUpdateComponent';
+import ShouldUpdateComponent from 'src/shouldUpdate/shouldUpdateComponent';
 
 export default class ShouldUpdate extends Component {
   constructor(props) {
@@ -7,8 +7,8 @@ export default class ShouldUpdate extends Component {
     this.state = {
       inputValue: '',
       data: {
-        value: ''
-      }
+        value: '',
+      },
     };
     this.onChange = this.onChange.bind(this);
     this.onClick = this.onClick.bind(this);

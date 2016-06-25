@@ -10,7 +10,7 @@ function Root({ children }) {
 }
 
 Root.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.element, PropTypes.array, PropTypes.string]).isRequired
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.array, PropTypes.string]).isRequired,
 };
 
 export default function App() {

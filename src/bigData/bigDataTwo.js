@@ -2,11 +2,11 @@ import { connect } from 'react-redux';
 import React, { Component, PropTypes } from 'react';
 
 export default connect((state) => ({
-  data: state.bigData.two
+  data: state.bigData.two,
 }))(class BigDataTwo extends Component {
   static propTypes = {
     data: PropTypes.object.isRequired,
-    dispatch: PropTypes.func.isRequired
+    dispatch: PropTypes.func.isRequired,
   };
 
   constructor(props) {

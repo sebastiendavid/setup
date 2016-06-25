@@ -8,14 +8,14 @@ describe(path.relative(process.cwd(), __filename), () => {
   before(() => {
     module = proxyquire('src/app', {
       './app.scss': {
-        '@noCallThru': true
+        '@noCallThru': true,
       },
       'src/list': {
-        '@noCallThru': true
+        '@noCallThru': true,
       },
       'src/bigData': {
-        '@noCallThru': true
-      }
+        '@noCallThru': true,
+      },
     });
   });
 

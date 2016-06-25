@@ -17,5 +17,5 @@ export default createReducer(initialState, {
       list.push({ id: n, label: `label ${n}` });
     }
     return list;
-  }
+  },
 });

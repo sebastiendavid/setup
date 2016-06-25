@@ -3,7 +3,7 @@ import React, { PropTypes, Component } from 'react';
 
 export default class OptiListItem extends Component {
   static propTypes = {
-    item: PropTypes.object.isRequired
+    item: PropTypes.object.isRequired,
   };
 
   shouldComponentUpdate(nextProps) {
