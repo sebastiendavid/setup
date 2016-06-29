@@ -8,7 +8,6 @@ import webpack from 'webpack';
 
 const cdnjs = '//cdnjs.cloudflare.com/ajax/libs';
 const versions = Object.assign({}, pkg.devDependencies, pkg.dependencies);
-const modules = [path.resolve('.'), path.resolve('node_modules')];
 let env = 'development';
 let min = '';
 let prod = false;
@@ -33,8 +32,10 @@ module.exports = {
     publicPath: '/',
   },
   resolve: {
-    modulesDirectories: modules,
-    modules,
+    root: [
+      path.resolve('.'),
+    ],
+    modulesDirectories: ['node_modules'],
   },
   externals: {
     moment: 'moment',

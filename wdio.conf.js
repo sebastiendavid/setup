@@ -149,7 +149,7 @@ exports.config = {
   // before: function (capabilities, specs) {
   // },
   before: function() {
-    require('babel-register');
+    require('babel-core/register');
     browser.windowHandleSize({width: 1280, height: 800});
     // browser.windowHandleMaximize();
   },
