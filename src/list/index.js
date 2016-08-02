@@ -1,8 +1,8 @@
-import './list.scss';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import OptiList from 'src/list/optiList';
-import React, { Component, PropTypes } from 'react';
 import YoloList from 'src/list/yoloList';
+import './list.scss';
 
 export default connect()(class Lists extends Component {
   static propTypes = {

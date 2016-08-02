@@ -3,8 +3,8 @@ import cssnano from 'cssnano';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
-import pkg from './package.json';
 import webpack from 'webpack';
+import pkg from './package.json';
 
 const cdnjs = '//cdnjs.cloudflare.com/ajax/libs';
 const versions = Object.assign({}, pkg.devDependencies, pkg.dependencies);

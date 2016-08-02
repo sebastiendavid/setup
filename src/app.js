@@ -1,9 +1,9 @@
-import './app.scss';
 import { browserHistory, IndexRedirect, Route, Router } from 'react-router';
 import BigData from 'src/bigData';
 import Lists from 'src/list';
 import React, { PropTypes } from 'react';
 import ShouldUpdate from 'src/shouldUpdate';
+import './app.scss';
 
 function Root({ children }) {
   return <main className="App">{children}</main>;

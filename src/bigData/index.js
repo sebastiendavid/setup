@@ -1,7 +1,7 @@
-import './bigData.scss';
+import React from 'react';
 import BigDataOne from 'src/bigData/bigDataOne';
 import BigDataTwo from 'src/bigData/bigDataTwo';
-import React from 'react';
+import './bigData.scss';
 
 export default function BigData() {
   return (
