@@ -64,7 +64,7 @@ module.exports = {
   postcss: () => [
     autoprefixer({ browsers: ['last 2 versions'] }),
     prod ? cssnano() : null,
-  ].filter((plugin) => !!plugin),
+  ].filter(plugin => !!plugin),
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': `"${env}"`,
@@ -87,10 +87,10 @@ module.exports = {
           `${cdnjs}/react-redux/${versions['react-redux']}/react-redux${min}.js`,
           `${cdnjs}/redux-thunk/${versions['redux-thunk']}/redux-thunk${min}.js`,
           `${cdnjs}/react-router/${versions['react-router']}/ReactRouter${min}.js`,
-        ].map((url) => `<script src="${url}"></script>`).join('\n  '),
+        ].map(url => `<script src="${url}"></script>`).join('\n  '),
         css: [
           `${cdnjs}/normalize/${versions['normalize.css']}/normalize${min}.css`,
-        ].map((url) => `<link href="${url}" rel="stylesheet" type="text/css" />`).join('\n  '),
+        ].map(url => `<link href="${url}" rel="stylesheet" type="text/css" />`).join('\n  '),
       },
       minify: prod ? {
         removeComments: true,
@@ -113,7 +113,7 @@ module.exports = {
         removeEmptyElements: false,
       } : false,
     }),
-  ].filter((plugin) => !!plugin),
+  ].filter(plugin => !!plugin),
   devServer: {
     historyApiFallback: true,
   },
